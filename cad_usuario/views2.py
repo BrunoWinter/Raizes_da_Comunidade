@@ -10,13 +10,13 @@ def cadastro(request):
         
         user = User.objects.filter(username=usuario).first()
         if user:
-            return HttpResponse("Usuario já cadastrado")
+            return render(request, "usuario/cadastro.html", {'error_message': 'Usuário já cadastrado'})
             
         
         user = User.objects.create_user(username=usuario, password=senha)
         user.save()
         
         
-        return render(request, "./home.html")
+        return render(request, "usuario/cadastro.html", {'sucessful_message': 'Usuário cadastrado com sucesso'} )
         
             
