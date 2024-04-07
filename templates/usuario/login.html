@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    
+    
+    <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        <div style="text-align: center;" class="container-fluid">
+        <h1>Login</h1>
+        <!--
+        {%if error_message%}
+            <p>{{ error_message }}</p>
+            {% else %}
+            <p>{{sucessful_message}}</p>
+        {% endif %}
+        -->
+        <input type="text" placeholder="Nome do usuario" name="usuario">
+        <input type="password" placeholder="Senha" name="senha">
+        <input type="submit" value="Entrar">
+        </div>
+    </form>
+{% endblock %}

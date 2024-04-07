@@ -9,6 +9,7 @@ urlpatterns = [
     path("",views.home, name="home"),
     path("atividades/",views.atividades, name="atividade"),
     path('cadastro', include('cad_usuario.urls')),
+    path('login/', include('cad_usuario.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
