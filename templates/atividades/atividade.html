@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+    <form method="post">
+        {% csrf_token %}
+        <div style="text-align: center;" class="container-fluid"> 
+          <h1>Cadastro de Atividades</h1>
+          Realizada<input name="atividade" class="form-control-sm" type="text" required onchange="this.value = this.value.trim()">
+          Data <input name="dt_atividade" class="form-control-sm"type="date" required onchange="this.value = this.value.trim()">
+          <!-- List box com culturas cadastradas-->
+          <button type="submit" onclick="recarregarPagina()"> Enviar </button>
+          <!--<button class="form-control-sm"> Cadastrar </button> -->
+          </div>  
+      </form>
+      <p></p>
+      <div class="container">
+        <table class="table table-bordered table-strip">
+            <tr>
+                <th>id</th>
+                <th>Atividade</th>
+                <th>Data</th>
+            </tr>
+             {% for atividade in atividades %}
+                <tr>
+                <td>{{atividade.id}}</td>
+                <td>{{atividade.atividade}}</td>
+                <td>{{atividade.dt_atividade}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        {% endblock %}

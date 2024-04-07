@@ -3,7 +3,7 @@ from .models import Atividade
 from datetime import datetime
 
 def home(request):
-    return render(request, "atividades/home.html")
+    return render(request, "./home.html")
 
 def atividades(request):
     lista_atividades = {}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    
+    
+    <form action="{% url 'cadastro'%}" method="POST">
+        {% csrf_token %}
+        <div style="text-align: center;" class="container-fluid">
+        <h1>Cadastre-se</h1>
+        <input type="text" placeholder="Nome do usuario" name="usuario">
+        <input type="password" placeholder="Senha" name="senha">
+        <input type="submit" value="Cadastrar">
+        </div>
+    </form>
+{% endblock %}
