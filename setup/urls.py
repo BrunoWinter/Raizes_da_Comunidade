@@ -8,7 +8,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("",views.home, name="home"),
     path("atividades/",views.atividades, name="atividade"),
-    path('cadastro', include('app_cad_usuario.urls')),
+    path('cadastro/', include('app_cad_usuario.urls')),
+    path('login/', include('app_cad_usuario.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
