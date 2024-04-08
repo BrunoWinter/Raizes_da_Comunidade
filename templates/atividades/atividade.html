@@ -1,20 +1,13 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
-    <form method="post">
-        {% csrf_token %}
-        <div style="text-align: center;" class="container-fluid"> 
-          <h1>Cadastro de Atividades</h1>
-          Realizada<input name="atividade" class="form-control-sm" type="text" required onchange="this.value = this.value.trim()">
-          Data <input name="dt_atividade" class="form-control-sm"type="date" required onchange="this.value = this.value.trim()">
-          <!-- List box com culturas cadastradas-->
-          <button type="submit" onclick="recarregarPagina()"> Enviar </button>
-          <!--<button class="form-control-sm"> Cadastrar </button> -->
-          </div>  
-      </form>
-      <p></p>
-      <div class="container">
-        <table class="table table-bordered table-strip">
+    <div style="text-align: center;" class="container-fluid"> 
+        <h1 class="text-center mt-5" style="font-size: 1.5rem;">Planeje e registre suas contribuições junto a comunidade! Aqui você poderá registrar e visualizar as atividades relacionadas a horta!</h1>
+        <button type="button" class="btn btn-success btn-lg m-5" data-toggle="modal" data-target="#modalAtividade" data-whatever="@mdo">Adicionar Atividade</button>
+    </div>
+
+    <div class="container">
+        <table class="table table-bordered table-strip table-hover">
             <tr>
                 <th>id</th>
                 <th>Atividade</th>
@@ -28,5 +21,35 @@
                 </tr>
             {% endfor %}
         </table>
+    </div>
 
-        {% endblock %}
+    <div class="modal fade" id="modalAtividade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form method="post">
+                {% csrf_token %}
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Registre a atividade</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="nome-atividade" class="col-form-label">Atividade:</label>
+                            <input name="atividade" id="nome-atividade" class="form-control" type="text" required onchange="this.value = this.value.trim()">
+                        </div>
+                        <div class="form-group">
+                            <label for="data-atividade" class="col-form-label">Data:</label>
+                            <input name="dt_atividade" id="data-atividade" class="form-control" type="date" required onchange="this.value = this.value.trim()">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+{% endblock %}

@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
     <title>Raízes da Comunidade</title>
+    <style>
+      body {
+        overflow-y: auto; 
+        min-height: 100vh;
+      }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#"><img src="/media/icone.png" alt="logotipo" style="width: 3rem;"></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="/media/icone.png" alt="logotipo" style="width: 3rem;"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,24 +35,21 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Fórum</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'cadastro' %}">Cadastre-se</a>
-          </li>
         </ul>
       </div>
     </nav>
-    
+
+    <main class="mb-5 mt-5 pb-5 pt-5">
     {% block conteudo %}
     
     {% endblock %}
+    </main>
 
-    <footer class="bg-body-tertiary text-center text-lg-start">
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);width: 100%; bottom: 0;">
+    <footer class="bg-body-tertiary text-center w-100 fixed-bottom">
+      <div class="container p-4"></div>
+      <div class="text-center p-3 bg-light">
         © 2024 Projeto Integrador Univesp:
-        <a class="text-body" href="https://mdbootstrap.com/">Raízes da Comunidade</a>
+        <a class="text-body" href="#">Raízes da Comunidade</a>
       </div>
     </footer>
     
