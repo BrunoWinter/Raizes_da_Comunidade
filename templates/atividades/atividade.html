@@ -12,12 +12,14 @@
                 <th>id</th>
                 <th>Atividade</th>
                 <th>Data</th>
+                <th>Nome</th>
             </tr>
              {% for atividade in atividades %}
                 <tr>
                 <td>{{atividade.id}}</td>
                 <td>{{atividade.atividade}}</td>
-                <td>{{atividade.dt_atividade}}</td>
+                <td>{{atividade.dt_atividadedb}}</td>
+                <td>{{atividade.usuario_id}}</td>
                 </tr>
             {% endfor %}
         </table>
