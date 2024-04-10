@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "app_cad_atividades",
     "app_cad_usuario",
+    "app_horta"
 ]
 
 MIDDLEWARE = [

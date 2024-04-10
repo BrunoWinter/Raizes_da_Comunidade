@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from httpx import request
+from django.http import request
 
 from app_cad_usuario.views2 import user_login
 
