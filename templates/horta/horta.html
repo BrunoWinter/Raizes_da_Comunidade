@@ -1,12 +1,62 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-{% if horta %}
-    <h1>Sua Horta</h1>
-    <p>Nome: {{ horta.nome }}</p>
-    <p>Descrição: {{ horta.descricao }}</p>
-{% else %}
-    <h3>Você ainda não possui uma horta</h3>
-    <p>Deseja criar uma horta?</p>
-    <a href="{% url 'criar_horta' %}">Criar uma horta</a>
-{% endif %}
+
+    <section>
+        {% if horta %}
+        <h1>Sua Horta</h1>
+        <p>Nome: {{ horta.nome }}</p>
+        <p>Descrição: {{ horta.descricao }}</p>
+        <br>
+        <br>
+        {% if culturas  %}
+        <div class='cards'>
+            <ul style='list-style-type: none;'>
+                <h2>Lista de Culturas</h2>
+                {% for cultura in culturas %}
+                <li>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">{{cultura.name}}</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">{{cultura.type}}</h6>
+                          <p class="card-text">{{cultura.desc}}</p>
+                          <a href="#" class="#">Excluir Cultura</a>
+                        </div>
+                      </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% else %}
+        <p>Cadastre sua cultura!!!!</p>
+        {% endif %}
+    </section>
+
+    
+    <section>
+        <h3>Insira sua Cultura</h3>
+        <form action={% url 'inserir_cultura' %} method='POST'>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nome da Cultura</label>
+                <input name="nome_cultura" type="text" placeholder="Tomate">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Tipo</label>
+                <input name="tipo_cultura" type="text" placeholder="Fruta">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+                <textarea name="desc_cultura" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Adicionar">
+            </div>
+        </form>      
+    {% else %}
+        <h3>Você ainda não possui uma horta</h3>
+        <p>Deseja criar uma horta?</p>
+        <a href="{% url 'criar_horta' %}">Criar uma horta</a>
+    {% endif %}
+    </section>
+    
 {% endblock %}
