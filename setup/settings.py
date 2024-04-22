@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "app_cad_atividades",
     "app_cad_usuario",
-    "app_horta"
+    "app_horta",
+    "app_cultivo",
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,10 @@ ROOT_URLCONF = "setup.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'templates')],
+        "DIRS": [
+            os.path.join(BASE_DIR, 'templates',)
+            ], 
+                
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

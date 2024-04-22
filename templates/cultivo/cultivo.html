@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<h1 class="text-center m-5" style="font-size: 1.5rem;">Saiba tudo sobre o que você pode cultivar na sua horta.</h1>
+
+<!-- <link rel="stylesheet" href="cultivo.css"> -->
+
+<div class="d-flex justify-content-center flex-wrap">
+  <div class="card m-2" style="width: 18rem;">
+    <img class="card-img-top" src="/media/alface.jpg" alt="Imagem de capa do card">
+    <div class="card-body">
+      <h5 class="card-title">Alface</h5>
+      <p class="card-text">Não é cabelo, mas pode ser lisa ou crespa...</p>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+        Saiba mais
+      </button>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">A queridinha das hortaliças</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h2>Alface</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias placeat sequi dolores suscipit, quis magni cum officia accusamus impedit commodi repellendus magnam harum deserunt tenetur repudiandae fugit dolorem nihil voluptatibus.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card m-2" style="width: 18rem;">
+    <img class="card-img-top" src="/media/cebolinha.jpg" alt="Imagem de capa do card">
+    <div class="card-body">
+      <h5 class="card-title">Cebolinha</h5>
+      <p class="card-text">Pala plantal na sua holta!</p>
+      <a href="#" class="btn btn-success">Saiba mais</a>
+    </div>
+  </div>
+
+  <div class="card m-2" style="width: 18rem;">
+    <img class="card-img-top" src="/media/couve.jpg" alt="Imagem de capa do card">
+    <div class="card-body">
+      <h5 class="card-title">Couve Manteiga</h5>
+      <p class="card-text">Evite passar no pão. Não dá certo.</p>
+      <a href="#" class="btn btn-success">Saiba mais</a>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
