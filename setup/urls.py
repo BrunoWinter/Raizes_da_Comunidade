@@ -11,6 +11,7 @@ urlpatterns = [
     path('cadastro/', include('app_cad_usuario.urls')),
     path('login/', include('app_cad_usuario.urls')),
     path('authuser/', include('app_horta.urls')),
+    path('authuser/', include('app_forum.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
