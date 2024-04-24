@@ -19,7 +19,10 @@
                           <h5 class="card-title">{{cultura.name}}</h5>
                           <h6 class="card-subtitle mb-2 text-muted">{{cultura.type}}</h6>
                           <p class="card-text">{{cultura.desc}}</p>
-                          <a href="#" class="#">Excluir Cultura</a>
+                          <form action="{% url 'excluir_cultura' cultura.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit">Excluir</button>
+                            </form>
                         </div>
                       </div>
                 </li>
