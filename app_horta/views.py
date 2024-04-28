@@ -47,16 +47,15 @@ def inserir_cultura(request):
     
     return render(request, "horta/horta.html")
 
-#@login_required
-#def excluir_cultura(request, id):
-#    if request.method == 'POST':
-#        cultura = get_object_or_404(Cultura, id = id)
-#        cultura.delete()
-#        return redirect('minha_horta')
-#    else:
-#        return redirect('minha_horta')
-        
-
+@login_required
+def excluir_cultura(request, pk):
+    if request.method == 'POST':
+        cultura = get_object_or_404(Cultura, pk=pk)
+        cultura.delete()
+        return redirect('minha_horta')
+    else:
+        # Lidar com outros métodos, se necessário
+        return redirect('minha_horta')
 
         
 
