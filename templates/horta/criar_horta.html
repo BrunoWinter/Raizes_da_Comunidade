@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="nome">Nome da Horta:</label><br>
+        <input type="text" id="nome" name="nome"><br><br>
+        <label for="descricao">Descrição:</label><br>
+        <textarea id="descricao" name="descricao"></textarea><br><br>
+        <button type="submit">Criar Horta</button>
+    </form>
+{% endblock %}

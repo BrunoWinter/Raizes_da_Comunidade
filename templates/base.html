@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Raízes da Comunidade</title>
-    <script src="https://kit.fontawesome.com/b144170c7e.js" crossorigin="anonymous"></script>
     <style>
       body {
         overflow-y: auto; 
@@ -14,7 +13,7 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light" style= "color: #90A246;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="{% url 'home' %}"><img src="/media/icone.png" alt="logotipo" style="width: 3rem;"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
@@ -22,26 +21,36 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'home' %}">Início<span class="sr-only"></span></a>
+            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(Página atual)</span></a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'atividade' %}">Registro de atividades</a>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'atividade' %}">Registre as atividades</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="#">Cultivo</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="#">Dicas</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Fórum</a>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'forum' %}">Fórum</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'cadastro' %}">Cadastre-se</a>
+          </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'minha_horta' %}">Horta</a>
+        </li>
 
         </ul>
       </div>
     </nav>
 
-    <main style="height:100vh;">
+    <main class="mb-5 mt-5 pb-5 pt-5">
     {% block conteudo %}
     
     {% endblock %}
@@ -49,14 +58,14 @@
 
     <footer class="bg-body-tertiary text-center w-100 fixed-bottom">
       <div class="container p-4"></div>
-      <div class="text-center text-dark p-3 bg-light">
-        © 2024 Projeto Integrador Univesp: Raízes da Comunidade
-  </div>
+      <div class="text-center p-3 bg-light">
+        © 2024 Projeto Integrador Univesp:
+        <a class="text-body" href="#">Raízes da Comunidade</a>
+      </div>
     </footer>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
   </body>
 </html>

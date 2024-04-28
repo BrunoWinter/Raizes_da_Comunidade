@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
-<div class="h-100">
     <div style="text-align: center;" class="container-fluid"> 
         <h1 class="text-center mt-5" style="font-size: 1.5rem;">Planeje e registre suas contribuições junto a comunidade! Aqui você poderá registrar e visualizar as atividades relacionadas a horta!</h1>
-        <button type="button" class="btn btn-lg m-5" style="background-color: #90A246; color: white;" data-toggle="modal" data-target="#modalAtividade" data-whatever="@mdo">Adicionar Atividade</button>
+        <button type="button" class="btn btn-success btn-lg m-5" data-toggle="modal" data-target="#modalAtividade" data-whatever="@mdo">Adicionar Atividade</button>
     </div>
 
     <div class="container">
@@ -13,24 +12,14 @@
                 <th>id</th>
                 <th>Atividade</th>
                 <th>Data</th>
-                <th>Ações</th>
-
+                <th>Nome</th>
             </tr>
              {% for atividade in atividades %}
                 <tr>
                 <td>{{atividade.id}}</td>
                 <td>{{atividade.atividade}}</td>
-                <td>{{atividade.dt_atividade}}</td>
-                <td style="width: 2rem;">
-                    <div class="dropdown">
-                    <button class="btn btn-light btn-lg" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-solid fa-ellipsis" style="color: #90A246;"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item" type="button"><i class="fa-solid fa-pen" style="color: #999c9c;"></i>  Editar</button>
-                        <button class="dropdown-item" type="button"><i class="fa-solid fa-trash" style="color: #999c9c;"></i>  Excluir</button>
-                    </div>
-                  </div>
-                    
+                <td>{{atividade.dt_atividadedb}}</td>
+                <td>{{atividade.usuario_id}}</td>
                 </tr>
             {% endfor %}
         </table>
@@ -54,17 +43,14 @@
                         </div>
                         <div class="form-group">
                             <label for="data-atividade" class="col-form-label">Data:</label>
-                            <input name="dt_atividade" id="data-atividade" class="form-control" type="date" required onchange="this.value = this.value.trim()">
+                            <input name="dt_atividade" id="data-atividade" class="form-control" type="date" required onchange="this.value = this.value.trim()" onkeydown="return false">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn" style="background-color: #90A246; color: white;">Salvar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-success">Salvar</button>
                 </div>
             </form>
         </div>
-    </div>
-</div>
-
     
 {% endblock %}
