@@ -1,11 +1,19 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <form method="post">
-        {% csrf_token %}
-        <label for="nome">Nome da Horta:</label><br>
-        <input type="text" id="nome" name="nome"><br><br>
-        <label for="descricao">Descrição:</label><br>
-        <textarea id="descricao" name="descricao"></textarea><br><br>
-        <button type="submit">Criar Horta</button>
-    </form>
+
+    <div class="d-flex flex-fill justify-content-center align-items-center">
+        <div class="card p-3 mb-2 bg-gradient-light text-dark mt-5" style="width: 25rem;">
+            <div class="card-body" >
+                <form method="post">
+                    {% csrf_token %}
+                    <label for="nome" class="">Nome da Horta:</label><br>
+                    <input class="form-control" type="text" id="nome" name="nome"><br><br>
+                    <label for="descricao">Descrição:</label><br>
+                    <textarea class="form-control" rows="3" id="descricao" name="descricao"></textarea><br><br>
+                    <button type="submit" class="btn btn-lg btn-block mt-3 btn-success">Criar Horta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
