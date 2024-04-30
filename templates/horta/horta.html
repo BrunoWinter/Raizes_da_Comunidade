@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
+ 
+
     <section>
         {% if horta %}
         <h1>Sua Horta</h1>
@@ -56,10 +58,27 @@
             </div>
         </form>      
     {% else %}
-        <h3>Você ainda não possui uma horta</h3>
-        <p>Deseja criar uma horta?</p>
-        <a href="{% url 'criar_horta' %}">Criar uma horta</a>
+        <div class="d-flex justify-content-center align-items-center h-100 mt-5">
+            <div class="d-flex flex-wrap">
+                <div class="d-flex flex-fill p-2 justify-content-center">
+                    <img src="/media/sammy-man-gardener-digging-up-a-carrot.png" class="img-fluid pt-3" alt="Imagem responsiva">
+                </div>
+                <div class="card border-0 text-center pl-3 pt-3">
+                    <div class="card-body">
+                    <h1 class="card-title">Vamos plantar!</h1>
+                    <h5 class="card-text pt-4">Deseja criar uma horta? Comece aqui a planejar o que será plantado.</h5>
+                    <a href="{% url 'criar_horta' %}" class="btn btn-lg btn-block mt-5 mb-5 btn-success">Criar uma horta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <h1 class="display-4">Confira nossas dicas!</h1>
+            <p class="lead">Consulte nosso guia prático para gerenciar sua horta! Compartilhe essas dicas com a sua comunidade!</p>
+            <hr class="my-4">
+            <a class="btn btn-outline-secondary btn-lg" href="#" role="button">Leia mais</a>
+          </div>
     {% endif %}
     </section>
-    
 {% endblock %}
