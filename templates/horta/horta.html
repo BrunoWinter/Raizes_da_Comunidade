@@ -58,15 +58,15 @@
                         {% csrf_token %}
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Nome da Cultura</label>
-                            <input name="nome_cultura" type="text" placeholder="Tomate" class="form-control form-control-lg">
+                            <input name="nome_cultura" type="text" placeholder="Tomate" class="form-control form-control-lg" required="True">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Tipo</label>
-                            <input name="tipo_cultura" type="text" placeholder="Fruta" class="form-control form-control-lg">
+                            <input name="tipo_cultura" type="text" placeholder="Fruta" class="form-control form-control-lg" required="True">
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
-                            <textarea name="desc_cultura" rows="3" class="form-control"></textarea>
+                            <textarea name="desc_cultura" rows="3" class="form-control"></textarea >
                         </div>
                     </div>
                     <div class="modal-footer">
