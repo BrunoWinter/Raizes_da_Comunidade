@@ -1,46 +1,42 @@
-
 {% extends 'base.html' %}
 {% block conteudo %}
 <div class="container">
- <div class="container">
-   <div class="sd_header">
-     <h1>Fórum da Comunidade</h1> 
-   </div>
-   <div>
-     <div class="row">
-      <div class="col" >
-       <h3>Bem vindo, "User"</h3>
-       <ul class="nav flex-column" style="list-style: none;">
-         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Dúvidas</a>
-         </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#">Interação</a>
-         </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#">Relatos</a>
-         </li>
-        </ul>
-      </div>
-      <div class="col-6">
-       <h1>Dúvidas</h1>
-       <section>
-         <h2>Aqui estarão os tópicos já postados</h2>
-       </section>
-       <section>
-         <h3>Crie um tópico</h3>
-         <form action="#" method="post">
-           {% csrf_token %}
-           <div>
-             <input type="text" name="nomeTopico" id="nomeTopico">
-             <textarea name="textoTopico" id="textoTopico" rows="3"></textarea>
-             <input type="submit" value="postar">
-           </div>
-         </form>
-       </section>
-      </div>
-     </div>
+  <div class="sd_header" style="text-align: center;">
+    <h1>Fórum da Comunidade</h1>
+  </div>
+  <h3>Crie um tópico</h3>
+  <form action= {% url "criar_topico" %} method="post">
+    {% csrf_token %}
+    <div>
+        <input type="text" name="nomeTopico" id="nomeTopico" />
+        <textarea name="textoTopico" id="textoTopico" rows="3"></textarea>
+        <input type="submit" value="postar" />
     </div>
- </div>
+  </form>
+  <section>
+    {% if topicos %}
+    <div class="container">
+      <table class="table table-bordered table-strip table-hover">
+        <tr>
+          <th>Titulo</th>
+          <th>Descrição</th>
+          <th>Criador</th>
+          <th>Data</th>
+        </tr>
+        {% for topico in topicos  %}
+        <tr>
+          <td> <a href="#">{{topico.titulo}}</a></td>
+          <td>{{topico.descricao}}</td>
+          <td>{{topico.criador}}</td>
+          <td>{{topico.data}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    {% else %}
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere cumque doloribus similique expedita fuga praesentium ullam ab omnis numquam neque magnam earum ratione hic atque, accusantium reprehenderit exercitationem accusamus?</h2>
+    {% endif %}
+  </section>
+  
 </div>
 {% endblock %}
