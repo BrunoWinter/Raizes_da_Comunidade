@@ -9,5 +9,6 @@ class Topico(models.Model):
     
 class Comentario(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    topico = models.ForeignKey(Topico, on_delete=models.CASCADE)
     data = models.DateField(auto_now_add=True)
     comentario = models.TextField(max_length=300)

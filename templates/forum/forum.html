@@ -25,7 +25,7 @@
         </tr>
         {% for topico in topicos  %}
         <tr>
-          <td> <a href="#">{{topico.titulo}}</a></td>
+          <td> <a href={% url "topico" pk=topico.id %}>{{topico.titulo}}</a></td>
           <td>{{topico.descricao}}</td>
           <td>{{topico.criador}}</td>
           <td>{{topico.data}}</td>
