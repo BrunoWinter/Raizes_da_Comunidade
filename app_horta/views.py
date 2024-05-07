@@ -54,7 +54,6 @@ def excluir_cultura(request, pk):
         cultura.delete()
         return redirect('minha_horta')
     else:
-        # Lidar com outros métodos, se necessário
         return redirect('minha_horta')
 
         
