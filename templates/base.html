@@ -36,15 +36,24 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'forum' %}">Fórum</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
-          </li>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'minha_horta' %}">Horta</a>
         </li>
-
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% endif %}
         </ul>
+        {% if user.is_authenticated %}
+        <div style="margin-left:50%">
+          <h5>Bem vindo, {{user.username}}</h5>
+        </div>
+        {% endif %}
       </div>
     </nav>
 
