@@ -22,7 +22,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(Página atual)</span></a>
+            <a class="nav-link" href="{% url 'home' %}">Início<span class="sr-only">(Página atual)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'atividade' %}">Registre as atividades</a>
@@ -31,29 +31,25 @@
             <a class="nav-link" href="{% url 'cultivo' %}">Cultivo</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'minha_horta' %}">Horta</a>
+          </li>  
+          <li class="nav-item">
             <a class="nav-link" href="#">Informações úteis</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'forum' %}">Fórum</a>
+            <a class="nav-link" href="{% url 'forum' %}">Forum</a>
           </li>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'minha_horta' %}">Horta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Login</a>
-        </li>
-        {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-        </li>
-        {% endif %}
         </ul>
-        {% if user.is_authenticated %}
-        <div style="margin-left:30%">
-          <h5>Bem vindo, {{user.username}}</h5>
+        <div class="ml-md-auto d-flex align-items-end flex-column">
+          {% if user.is_authenticated %}
+            <h5>Bem-vindo(a), {{user.username}}</h5>
+            <a  href="{% url 'logout' %}">Sair <i class="fa-solid fa-right-from-bracket fa-xl" style="color: #000000;"></i></a>
+          {% else %}
+            <a class="nav-link" href="{% url 'login' %}">Entrar <i class="fa-solid fa-right-to-bracket fa-xl" style="color: #000000;"></i></a>
+          {% endif %}
         </div>
-        {% endif %}
+
       </div>
     </nav>
 
