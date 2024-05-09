@@ -1,82 +1,89 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
-    <section>
-        {% if horta %}
-        <div class="d-flex justify-content-center flex-column align-items-center mb-5 mt-5 bg-light">
-            <h1>Sua horta</h1>
-            <p><span class="font-weight-bold">Nome: </span>{{ horta.nome }}</p>
-            <p><span class="font-weight-bold">Descrição: </span>{{ horta.descricao }}</p>
-           
-            <button type="button" class="btn btn-success mb-3" data-toggle="modal" data-target="#modalExemplo">
-                Incluir cultura
-            </button>
-        </div>
+<div class="jumbotron jumbotron-fluid bg-light">
+    <div class="container">
+      <h1 class="display-4">Horta</h1>
+      <p class="lead">Deseja criar uma horta? Comece aqui a planejar o que será plantado!</p>
+    </div>
+  </div>
 
-        {% if culturas  %}
+<section>
+    {% if horta %}
+    <div class="d-flex justify-content-center flex-column align-items-center mb-5 mt-5 bg-light">
+        <h1>Sua horta</h1>
+        <p><span class="font-weight-bold">Nome: </span>{{ horta.nome }}</p>
+        <p><span class="font-weight-bold">Descrição: </span>{{ horta.descricao }}</p>
+        
+        <button type="button" class="btn btn-success mb-3" data-toggle="modal" data-target="#modalExemplo">
+            Incluir cultura
+        </button>
+    </div>
 
-        <div class="row d-flex flex-wrap justify-content-center align-items-center">
-            {% for cultura in culturas %}
-            <div class="col-sm-2 d-flex justify-content-center align-items-center">
-               
-              <div class="card mt-3"  style="width: 15rem;">
-                <div class="card-body">
-                    <h5 class="card-title">{{cultura.name}}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{cultura.type}}</h6>
-                    <p class="card-text">{{cultura.desc}}</p>
-                    <form action="{% url 'excluir_cultura' cultura.id %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-secundary">Excluir</button>
-                    </form>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
+    {% if culturas  %}
 
-        </div>
-        {% else %}
-
-        <div class="alert alert-warning mt-5 text-center" role="alert">
-            A horta não possui culturas
-        </div>
-
-        {% endif %}
-    </section>
-
-    <section>
-        <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <form action={% url 'inserir_cultura' %} method='POST'>
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Informações sobre a cultura</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Nome da Cultura</label>
-                            <input name="nome_cultura" type="text" placeholder="Tomate" class="form-control form-control-lg" required="True">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Tipo</label>
-                            <input name="tipo_cultura" type="text" placeholder="Fruta" class="form-control form-control-lg" required="True">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
-                            <textarea name="desc_cultura" rows="3" class="form-control"></textarea >
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <input type="submit" class="btn btn-success" value="Adicionar"></input>
-                    </div>
-                </div>
+    <div class="row d-flex flex-wrap justify-content-center align-items-center">
+        {% for cultura in culturas %}
+        <div class="col-sm-2 d-flex justify-content-center align-items-center">
+            
+            <div class="card mt-3"  style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{cultura.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{cultura.type}}</h6>
+                <p class="card-text">{{cultura.desc}}</p>
+                <form action="{% url 'excluir_cultura' cultura.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-secundary">Excluir</button>
                 </form>
             </div>
+            </div>
         </div>
+        {% endfor %}
+
+    </div>
+    {% else %}
+
+    <div class="alert alert-warning mt-5 text-center" role="alert">
+        A horta não possui culturas
+    </div>
+
+    {% endif %}
+</section>
+
+<section>
+    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form action={% url 'inserir_cultura' %} method='POST'>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Informações sobre a cultura</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nome da Cultura</label>
+                        <input name="nome_cultura" type="text" placeholder="Tomate" class="form-control form-control-lg" required="True">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Tipo</label>
+                        <input name="tipo_cultura" type="text" placeholder="Fruta" class="form-control form-control-lg" required="True">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
+                        <textarea name="desc_cultura" rows="3" class="form-control"></textarea >
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <input type="submit" class="btn btn-success" value="Adicionar"></input>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
 
     {% else %}
         <div class="d-flex justify-content-center align-items-center h-100 mt-5">
@@ -84,16 +91,15 @@
                 <div class="d-flex flex-fill p-2 justify-content-center">
                     <img src="/media/sammy-man-gardener-digging-up-a-carrot.png" class="img-fluid pt-3" alt="Imagem responsiva">
                 </div>
-                <div class="card border-0 text-center pl-3 pt-3">
+                <div class="card border-0 text-center pl-4 pt-3">
                     <div class="card-body">
                     <h1 class="card-title">Vamos plantar!</h1>
-                    <h5 class="card-text pt-4">Deseja criar uma horta? Comece aqui a planejar o que será plantado.</h5>
                     <a href="{% url 'criar_horta' %}" class="btn btn-lg btn-block mt-5 mb-5 btn-success">Criar uma horta</a>
                     </div>
                 </div>
             </div>
         </div>
     {% endif %}
-    </section>
+</section>
     
 {% endblock %}
