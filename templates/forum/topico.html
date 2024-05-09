@@ -1,31 +1,50 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-<div class="container">
-    <h1>{{nome_topico.titulo}}</h1>
-    <p>{{nome_topico.descricao}}</p>
-</div>
-{% if comentarios %}
-    {% for comentario in comentarios %}
-        <div class="card">
-            <div class="card-header">
-              <span>{{comentario.usuario}}</span>
-            </div>
-            <div class="card-body">
-              <blockquote class="blockquote mb-0">
-                <p>{{comentario.comentario}}</p>
-                <footer class="blockquote-footer">{{comentario.data}}</footer>
-              </blockquote>
-            </div>
-        </div>
-    {% endfor %}
-{% else %}
-        <p>Insira um comentário</p>
-{% endif %}
-<form action="{% url 'criar_comentario' topico_id=nome_topico.id %}" method="post">
 
+<div class="jumbotron jumbotron-fluid bg-light">
+  <div class="container">
+    <h1 class="display-4">Fórum</h1>
+    <p class="lead">Compartilhe idéias, soluções e desafios relacionados as hortas com a sua comunidade!</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="media border p-2 mb-3">
+    <div class="d-flex flex-column">
+      <img class="img-thumbnail" src="/media/user-solid.svg" alt="imagem usuario">
+      <span class="text-center">{{nome_topico.criador}}</span>
+    </div>
+    <div class="media-body ml-3">
+      <h1>{{nome_topico.titulo}}</h1>
+      <p>{{nome_topico.descricao}}</p>
+      <p><em>{{nome_topico.data}}</em></p>
+    </div>
+  </div>
+
+
+  {% if comentarios %}
+  <form action="{% url 'criar_comentario' topico_id=nome_topico.id %}" method="post">
     {% csrf_token %}
-    <p>Insira aqui seu comentário</p>
-    <input type="text" name="comentario" id="comentario">
-</form>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentario" id="comentario" placeholder="Insira aqui seu comentário" required></textarea>
+    <button type="submit" id="comentario" class="btn btn-success mt-3 mb-3">Responder</button>
+  </form>
+  <p class="font-weight-bold">Respostas</p>
+
+  {% for comentario in comentarios %}
+  <div class="card mb-3">
+    <div class="card-header">
+      <span>{{comentario.usuario}}</span>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{comentario.comentario}}</p>
+        <footer class="blockquote-footer">{{comentario.data}}</footer>
+      </blockquote>
+    </div>
+  </div>
+  {% endfor %}
+  {% else %}
+    <p>Insira um comentário</p>
+  {% endif %}
 
 {% endblock %}
