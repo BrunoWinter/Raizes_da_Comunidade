@@ -44,12 +44,11 @@
         <div class="ml-md-auto d-flex align-items-end flex-column">
           {% if user.is_authenticated %}
             <h5>Bem-vindo(a), {{user.username}}</h5>
-            <a  href="{% url 'logout' %}">Sair <i class="fa-solid fa-right-from-bracket fa-xl" style="color: #000000;"></i></a>
+            <a class="btn btn-success"  href="{% url 'logout' %}">Sair <i class="fa-solid fa-arrow-right-from-bracket" style="color: #ffffff;"></i></a>
           {% else %}
-            <a class="nav-link" href="{% url 'login' %}">Entrar <i class="fa-solid fa-right-to-bracket fa-xl" style="color: #000000;"></i></a>
+            <a class="nav-link btn btn-success" href="{% url 'login' %}">Entrar <i class="fa-solid fa-arrow-right-to-bracket" style="color: #ffffff;"></i></a>
           {% endif %}
         </div>
-
       </div>
     </nav>
 
