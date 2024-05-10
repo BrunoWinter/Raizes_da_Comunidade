@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     "app_cad_atividades",
     "app_cad_usuario",
     "app_horta",
-    "app_forum"
+    "app_forum",
+    "app_info_uteis"
 ]
 
 MIDDLEWARE = [

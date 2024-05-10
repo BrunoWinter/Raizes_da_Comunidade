@@ -13,6 +13,8 @@ urlpatterns = [
     path('authuser/', include('app_horta.urls')),
     path('authuser/', include('app_forum.urls')),
     path('cultivo/', include('app_cultivo.urls')),
+    path('info_uteis/', include('app_info_uteis.urls')),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
