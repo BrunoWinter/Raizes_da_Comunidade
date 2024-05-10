@@ -2,16 +2,17 @@
 {% block conteudo %}
 <div class="jumbotron jumbotron-fluid bg-light">
     <div class="container">
-      <h1 class="display-4">Registre as atividades</h1>
+      <h1 class="display-4">Registre as atividades <i class="fa-solid fa-calendar-check fa-2xs" style="color: #949494;"></i></h1>
       <p class="lead">Planeje e registre suas contribuições junto a comunidade! Aqui você poderá registrar e visualizar as atividades relacionadas a horta!</p>
     </div>
   </div>
 
-    <div style="text-align: center;" class="container-fluid"> 
-        <button type="button" class="btn btn-success btn-lg mb-5" data-toggle="modal" data-target="#modalAtividade" data-whatever="@mdo">Adicionar Atividade</button>
-    </div>
-
     <div class="container">
+        <div style="text-align: left;" class="container-fluid"> 
+            <button type="button" class="btn btn-success btn-lg mb-5" data-toggle="modal" data-target="#modalAtividade" data-whatever="@mdo">Adicionar Atividade <i class="fa-solid fa-circle-plus" style="color: #ffffff;"></i></button>
+        </div>
+    
+        
         <table class="table table-bordered table-strip table-hover">
             <tr>
                 <th>id</th>
@@ -43,17 +44,17 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="nome-atividade" class="col-form-label">Atividade:</label>
-                            <input name="atividade" id="nome-atividade" class="form-control" type="text" required onchange="this.value = this.value.trim()">
+                            <label for="nome-atividade" class="col-form-label">Nome da atividade:</label>
+                            <input name="atividade" id="nome-atividade" class="form-control" placeholder="Ex.: Adubar a terra" type="text" required onchange="this.value = this.value.trim()">
                         </div>
                         <div class="form-group">
-                            <label for="data-atividade" class="col-form-label">Data:</label>
+                            <label for="data-atividade" class="col-form-label">Data de realização:</label>
                             <input name="dt_atividade" id="data-atividade" class="form-control" type="date" required onchange="this.value = this.value.trim()" onkeydown="return false">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-success">Salvar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar <i class="fa-solid fa-circle-xmark" style="color: #ffffff;"></i></button>
+                    <button type="submit" class="btn btn-success">Salvar <i class="fa-solid fa-circle-check" style="color: #ffffff;"></i></button>
                 </div>
             </form>
         </div>
