@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     "app_cad_usuario",
     "app_horta",
     "app_forum",
-    "app_info_uteis"
+    "app_info_uteis",
+    "app_cultivo"
 ]
 
 MIDDLEWARE = [
