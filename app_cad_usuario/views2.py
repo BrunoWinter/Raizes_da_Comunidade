@@ -35,7 +35,9 @@ def user_login(request):
             return render(request, "home.html", {'sucessful_message': 'Usuário Logado com sucesso'} )
             #return HttpResponse('autenticado')
         else:
-            return HttpResponse('email ou senha inválidos')
+            lista_mensagem = {}
+            lista_mensagem['mensagem_erro'] = 'E-mail ou senha inválidos'
+            return render(request, 'usuario/login.html', lista_mensagem)
         
 def user_logout(request):
     logout(request)
