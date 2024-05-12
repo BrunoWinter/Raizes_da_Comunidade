@@ -18,7 +18,7 @@ def cadastro(request):
         user.save()
         
         
-        return render(request, "usuario/cadastro.html", {'sucessful_message': 'Usuário cadastrado com sucesso'} )
+        return render(request, "usuario/login.html", {'sucessful_message': 'Usuário cadastrado com sucesso'} )
         
             
 def user_login(request):

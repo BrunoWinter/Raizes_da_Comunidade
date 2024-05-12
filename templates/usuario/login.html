@@ -29,6 +29,11 @@
                     {{mensagem_erro}}
                 </div>
             {% endif %}
+            {%if sucessful_message %}
+                <div class="alert alert-success mt-5 text-center" role="alert">
+                    {{sucessful_message}}
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>
