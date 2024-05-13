@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 <div class="container mt-5">
-    <h1>Resultados da Pesquisa</h1>
-    <div class="row">
+    <h1 class="text-center">Resultado da Pesquisa</h1>
+    <div class="d-flex justify-content-center row mt-5">
       {% for resultado in resultados %}
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="card mb-4 shadow-sm">
             <img class="card-img-top" src="{{resultado.foto}}" alt="Imagem de capa do card">
             <div class="card-body">
-              <h5 class="card-title">{{resultado.nome}}</h5>
-              <p class="card-text">{{resultado.processo}}</p>
+              <h5 class="card-title text-center">{{resultado.nome}}</h5>
+              <p class="card-text font-weight-light text-center">{{resultado.processo}}</p>
             </div>
           </div>
         </div>
