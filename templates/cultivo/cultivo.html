@@ -11,8 +11,8 @@
 <div class="container">
   <div class="container d-flex justify-content-center mb-5">
     <nav class="navbar navbar-light bg-white">
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" style="width: 20rem;">
+      <form class="form-inline" action="{% url 'pesquisa' %}" method="get">
+        <input class="form-control mr-sm-2" type="search" name="q" placeholder="Pesquisar" aria-label="Pesquisar" style="width: 20rem;">
         <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar <i class="fa-solid fa-magnifying-glass fa-rotate-90" style="color: #ffffff;"></i></button>
       </form>
     </nav>
