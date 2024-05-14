@@ -1,6 +1,182 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
-<h1>aqui sera a pagina com informacoes e dicas</h1>
+<div class="jumbotron jumbotron-fluid bg-light">
+    <div class="container">
+      <h1 class="display-4">Informações úteis <i class="fa-solid fa-book fa-2xs" style="color: #949494;"></i></h1>
+      <p class="lead">Saiba mais sobre como cuidar e manter sua horta em bom estado! </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link text-dark font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Como preparar o local da horta?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <p>O preparo do local para implantação de uma horta requer alguns passos essenciais:
+                <ul>
+                    <li>Limpeza da área selecionada para remover qualquer resíduo espalhado;</li>
+                    <li>Roçagem e capina para eliminar a vegetação indesejada;</li>
+                    <li>Demarcação dos canteiros e áreas de plantio, seguida de revolvimento do solo com enxadão até 25 cm de profundidade para melhorar sua porosidade;</li>
+                    <li>Quebra dos torrões existentes utilizando uma enxada.</li>
+                </ul>
+                Quanto às dimensões dos canteiros, estas variam de acordo com as espécies a serem cultivadas, geralmente sendo de 1 metro de largura por 25 a 30 centímetros de altura, com sulcos entre 15 a 20 centímetros de largura e 20 a 25 centímetros de profundidade. O comprimento dos canteiros pode variar de acordo com o tamanho da horta, mas é importante garantir um caminho entre eles de 30 a 40 centímetros de largura. As distâncias entre os berços de plantio variam conforme cada espécie cultivada.</p>
+            </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link text-dark font-weight-bold collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                O que plantar?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                É crucial considerar as características ambientais ao selecionar hortaliças para cultivo, incluindo clima, solo e disponibilidade de água. Cada espécie tem suas preferências climáticas, e plantá-las em locais inadequados pode aumentar sua vulnerabilidade a doenças e pragas. Recomenda-se diversificar as espécies cultivadas, incluindo folhosas, frutíferas, tubérculos e raízes. Essa diversidade influencia significativamente a saúde das plantas e, por consequência, a qualidade dos produtos hortícolas.
+                <br>
+                <br>
+                <span class="font-weight-bold">CLASSIFICAÇÃO DAS HORTALIÇAS</span>
+                <ul>
+                    <li><span class="font-weight-bold">Folhosas: </span>alface, coentro, couve, manjericão, cebolinha, salsa, aipo, repolho etc</li>
+                    <li><span class="font-weight-bold">Bulbos: </span>cebola e alho.</li>
+                    <li><span class="font-weight-bold">Frutos: </span>abóbora, abobrinha, berinjela, pimentão, pepino, tomate, vagem, quiabo, etc.</li>
+                    <li><span class="font-weight-bold">Raízes ou tubérculos: </span>beterraba, batata, batata -doce, inhame, mandioca (aipim), cenoura, nabo, rabanete etc.</li>
+                    <li><span class="font-weight-bold">Flores: </span>couve -flor, brócolis etc.</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link text-dark font-weight-bold collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Como fazer a rotação e consorciação (plantas companheiras)?
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+                <span class="font-weight-bold">Rotação de Culturas</span>
+                <p>Plantar continuamente a mesma espécie vegetal ou família no mesmo local pode levar à exaustão de nutrientes no solo, prejudicando o desenvolvimento das plantas e aumentando o risco de pragas e doenças. Alternar regularmente as áreas com diferentes culturas é essencial. Após a colheita, é importante revolver e adubar o solo antes de plantar uma nova espécie de hortaliça, praticando assim a rotação de cultura.</p>
+                <span class="font-weight-bold">Consorciação de Plantas</span>
+                <p>A consorciação envolve o plantio próximo de certas espécies vegetais que se beneficiam mutuamente, conhecidas como plantas companheiras. Por outro lado, algumas plantas podem prejudicar umas às outras, liberando substâncias prejudiciais pelas raízes ou competindo por espaço, luz, água e nutrientes. Recomenda-se o plantio consorciado de hortaliças sempre que possível, visando maximizar o aproveitamento da área e dos recursos disponíveis, como água, adubos e luz solar. No entanto, é necessário avaliar cuidadosamente as espécies a serem consorciadas. Por exemplo, o rabanete e a alface são uma boa combinação: o rabanete cresce verticalmente e pode ser colhido após 25 dias, liberando espaço para a alface, que cresce mais lentamente e é colhida após cerca de 45 dias.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link text-dark font-weight-bold collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Como realizar o plantio?
+                </button>
+              </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <span class="font-weight-bold">Plantio de Hortaliças: Um Guia Passo a Passo</span>
+                <p>Antes de plantar hortaliças nos canteiros definitivos, é essencial seguir um processo adequado de germinação em sementeiras para algumas espécies. Quando as mudas apresentarem quatro ou cinco folhas, elas podem ser transplantadas para o local definitivo na horta. Por exemplo, alface, beterraba, brócolis, e outras são exemplos desse processo. Outras hortaliças, como alho, cenoura, e pepino, podem ser plantadas diretamente nos canteiros.</p>
+                <ul>
+                    <li><span class="font-weight-bold">Local de Plantio: </span>Um local escavado no solo usado para o plantio, geralmente com dimensões de 20 a 60 cm de comprimento, largura e profundidade. Os espaçamentos entre plantas são determinados por espécie.</li>
+                    <li><span class="font-weight-bold">Produção de Mudas: </span>A multiplicação de hortaliças é geralmente feita por sementes, embora outras formas, como partes vegetativas, também sejam possíveis. É crucial escolher plantas saudáveis para servirem de matriz. As sementes podem ser plantadas em sementeiras, onde se tornarão mudas antes de serem transplantadas para o local definitivo.</li>
+                    <li><span class="font-weight-bold">Transplante: </span>O procedimento de retirar mudas para transplantá-las em local definitivo é realizado quando elas têm 4 a 6 folhas ou 4 a 5 cm de altura. As mudas devem ser retiradas com terra junto às raízes, preferencialmente no final da tarde para evitar murchamento.</li>
+                    <li><span class="font-weight-bold">Plantio Definitivo: </span>As espécies podem ser plantadas diretamente no local definitivo, como canteiros, vasos ou recipientes. Plantio Definitivo sem Contenção: Pode ser realizado nas mesmas condições das sementeiras, em canteiros com dimensões limitadas. Plantio Definitivo com Contenção: Canteiros semelhantes aos sem contenção, mas com uma altura média de 30 cm, exigindo menos manutenção, mas um maior investimento em materiais de contenção. Seguir essas etapas garantirá um plantio eficaz e uma horta saudável e produtiva.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link text-dark font-weight-bold collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Como preparar o solo?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                O solo é essencial na agricultura ecológica, sendo considerado uma estrutura viva e dinâmica. Deve apresentar características que favoreçam o desenvolvimento das plantas, como boa penetração das raízes e equilíbrio na oferta de água, ar e nutrientes. Para garantir a saúde do solo e o sucesso do plantio, algumas dicas são importantes: Compre apenas a quantidade necessária de sementes para evitar o comprometimento de sua qualidade durante o armazenamento. Os solos variam em textura e são classificados como arenosos, argilosos, ou areno-argilosos. Para o plantio, prefira solos areno-argilosos, evitando os extremos de argila ou areia. O crescimento das plantas depende do equilíbrio entre os nutrientes, como nitrogênio, potássio e cálcio. O excesso de nitrogênio pode tornar as plantas mais vulneráveis a pragas e doenças. É recomendado adicionar materiais ricos em cálcio, fósforo e magnésio, como compostos orgânicos, cinzas de madeira e farinha de ossos, ao solo fraco antes do plantio. 
+                <br>
+                <br>
+                <ul>
+                    <li><span class="font-weight-bold">Condições ideais: </span> Condições ideais para o plantio incluem solo areno-argiloso, rico em matéria orgânica, com boa drenagem, baixa acidez (pH de 5,5 a 6,5) e fertilidade adequada. Se o solo for excessivamente arenoso, é possível melhorar sua estrutura adicionando matéria orgânica na quantidade necessária. Em resumo, é essencial que o solo apresente uma textura favorável ao desenvolvimento das raízes e forneça água, ar e nutrientes de forma equilibrada para garantir o sucesso do plantio.</li>
+                    <li><span class="font-weight-bold">Dica: </span>Solos compactados podem ser descompactados de duas maneiras: mecanicamente, usando um subsolador durante o preparo do solo, ou biologicamente, através do uso de espécies vegetais como o Guandu, que têm a capacidade de romper a camada compactada. Quanto ao uso de composto ou esterco, é importante aguardar um período de repouso antes do plantio, que pode variar de 1 a 15 dias, dependendo do nível de curtimento ou estabilização do composto. Quanto mais curtido estiver o composto, menos tempo será necessário antes do plantio.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link text-dark font-weight-bold collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  Como fazer a adubação?
+                </button>
+              </h5>
+            </div>
+            <div id="collapseSix" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>Para garantir o sucesso das hortas caseiras, o uso de adubo orgânico é recomendado. Além de fornecer nutrientes essenciais para as plantas, ele mantém o solo leve e fofo, promovendo aeração e infiltração de água. Ao preparar os canteiros, espalhe 20 litros de adubo orgânico por metro quadrado. Para locais específicos de plantio, aplique 5 litros de matéria orgânica misturada com terra, até 20 a 25 cm de profundidade. 
+                <br>
+                <br>
+                <span class="font-weight-bold">Algumas dicas adicionais: </span>
+                <ul>
+                    <li>Solos compactados podem ser descompactados mecanicamente, com o uso de um subsolador, ou biologicamente, utilizando espécies vegetais como o Guandu, que ajudam a romper a camada compactada.</li>
+                    <li>O período de repouso antes do plantio pode variar de 1 a 15 dias, dependendo do composto ou esterco utilizado. Quanto mais curtido estiver o material, menor será o tempo necessário antes do plantio.</li>
+                </ul>
+                Quanto à produção de adubo natural, a compostagem é um método eficaz. Ela transforma resíduos orgânicos, como cascas de frutas, folhas e esterco, em adubo rico em nutrientes. A compostagem melhora a qualidade do solo, reduzindo resíduos em aterros sanitários e contribuindo para a sustentabilidade ambiental. Existem diversos métodos para produzir composto orgânico, desde pilhas no solo até recipientes preparados. O controle adequado da temperatura e umidade acelera o processo de decomposição. O composto estará pronto quando apresentar características como cor escura, textura solta e cheiro de terra, após cerca de 30 a 60 dias, com o processo de cura completo entre 90 a 120 dias.</p>
+              </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link text-dark font-weight-bold collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  Como controlar insetos e pragas?
+                </button>
+              </h5>
+            </div>
+            <div id="collapseSeven" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                O aparecimento de pragas e doenças nas plantas geralmente está associado a desequilíbrios nutricionais e às condições ambientais adversas, como ventos fortes, excesso de sol, calor intenso, frio extremo e chuvas intensas. O cultivo em espaços reduzidos oferece vantagens, pois permite a instalação de dispositivos como sombrites, que reduzem a luminosidade e controlam a temperatura e umidade, criando um ambiente mais favorável para as plantas. Além disso, o controle de pragas pode ser feito manualmente, por meio da catação. É importante ressaltar que plantas bem nutridas tendem a ser mais resistentes a doenças, insetos-praga e ácaros. No entanto, é desaconselhável o uso de agrotóxicos em áreas urbanas, devido aos riscos para a saúde humana e ambiental.
+                <br>
+                Atualmente, há alternativas sustentáveis para o controle de insetos-praga, ácaros e doenças em diversos cultivos, incluindo hortaliças. Essas opções utilizam princípios ativos que não prejudicam o ambiente, a biodiversidade ou a saúde humana.<br><br>
+                
+                <ul>
+                    <li><span class="font-weight-bold">Homeopatia: </span>Os preparados homeopáticos são soluções dinamizadas de origem mineral, vegetal ou animal. Além de fortalecerem o sistema de defesa das plantas, podem controlar pragas e doenças bacterianas e fúngicas.</li>
+                    <li><span class="font-weight-bold">Caldas e Preparados: </span>A aplicação de biofertilizantes líquidos e outros preparados requer cuidados específicos, apesar de serem não tóxicos para humanos, animais e meio ambiente. Podem ser utilizados na agricultura orgânica, proporcionando efeitos nutritivos e protetores.</li>
+                </ul>
+                Essas abordagens oferecem alternativas seguras e eficazes para o manejo de problemas fitossanitários, contribuindo para uma produção agrícola mais sustentável.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link text-dark font-weight-bold collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  Como cuidar da horta?
+                </button>
+              </h5>
+            </div>
+            <div id="collapseEight" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <p>Manutenção da horta envolve uma série de cuidados e procedimentos que visam garantir condições ótimas para o crescimento e produção das plantas. Essas atividades são essenciais para assegurar o bom funcionamento e produtividade da horta.</p>
+                <ul>
+                    <li><span class="font-weight-bold">Cobertura Morta: </span>Cubra os canteiros ou recipientes de sementes ou mudas com capim ou folhas verdes ou secas, tomando cuidado para não sufocar as sementes. Isso protege o solo da exposição direta ao sol, mantém a umidade, reduz a germinação de plantas indesejadas e previne a erosão causada por chuvas intensas.</li>
+                    <li><span class="font-weight-bold">Amontoa: </span>Acumule um pouco de terra ao redor das plantas, especialmente importante para culturas como o milho.</li>
+                    <li><span class="font-weight-bold">Desbaste: </span>Quando plantadas hortaliças diretamente nos canteiros, como cenoura, rabanete, nabo, quiabo e feijão-de-vagem, é comum que as sementes fiquem próximas nos sulcos. Quando as plantas atingirem cerca de 5 cm de altura, remova o excesso para manter um espaçamento adequado.</li>
+                    <li><span class="font-weight-bold">Afofamento do Solo: </span>O uso de um rastelo é recomendado para afrouxar o solo. Manter uma boa quantidade de matéria orgânica, como composto e cobertura morta, reduz a necessidade de afofamento.</li>
+                    <li><span class="font-weight-bold">Controle de Plantas Daninhas (Capina): </span>Não é necessário remover todas as ervas espontâneas do canteiro. Capine apenas aquelas que competem por espaço ou prejudicam as hortaliças. No início, arranque-as manualmente; posteriormente, corte com enxada ou foice. O material cortado pode servir como cobertura morta. O mato controlado não interfere e até protege o solo depois de certo período.</li>
+                    <li><span class="font-weight-bold">Desbrota: </span>Em algumas variedades de couve, é necessário remover os brotos que se formam na base para não comprometer o crescimento das folhas.</li>
+                    <li><span class="font-weight-bold">Estaqueamento: </span>Plantas trepadeiras como vagens, pepinos e maracujá precisam ser apoiadas em estacas, geralmente de bambu, ou em fios esticados.</li>
+                    <li><span class="font-weight-bold">Rotação de Cultura: </span>A rotação de cultura envolve variar o local de cultivo de uma mesma hortaliça ou alternar regularmente e de forma ordenada o cultivo de diferentes espécies vegetais numa mesma área ao longo do tempo. Essa prática é recomendada para controlar pragas e doenças, bem como para reciclar nutrientes.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
