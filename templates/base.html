@@ -21,7 +21,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'home' %}">Início<span class="sr-only">(Página atual)</span></a>
           </li>
           <li class="nav-item">
@@ -66,6 +66,32 @@
       </div>
     </footer>
     
+    <script>
+
+      // Pegando a lista de <li> do menu
+      var listaDeliNav = document.getElementsByClassName('nav-item')
+
+      // Navegando em cada <li>
+      for (var i = 0; i < listaDeliNav.length; i++) {
+        var liNav = listaDeliNav[i];
+
+        // Pegando o primeiro <a> dentro desse li
+        var link = liNav.getElementsByTagName('a')[0];
+        
+        // pegando o href do <a>
+        var href = link.getAttribute('href');
+        
+        // Se o href for igual ao path atual presente na barra de endereco do navegador sera adicionado a classe active
+        if (href == window.location.pathname) {
+          liNav.classList.add('active');
+          liNav.classList.add('bg-light');
+        } else { // Caso contrario sera removido a classe active
+          liNav.classList.remove('active');
+          liNav.classList.remove('bg-light');
+        }        
+      }
+
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
