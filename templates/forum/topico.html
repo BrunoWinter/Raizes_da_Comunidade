@@ -21,28 +21,27 @@
     </div>
   </div>
 
-
-  {% if comentarios %}
   <form action="{% url 'criar_comentario' topico_id=nome_topico.id %}" method="post">
     {% csrf_token %}
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comentario" id="comentario" placeholder="Insira aqui seu comentário" required></textarea>
     <button type="submit" id="comentario" class="btn btn-success mt-3 mb-3">Responder</button>
   </form>
-  <p class="font-weight-bold">Respostas</p>
-
-  {% for comentario in comentarios %}
-  <div class="card mb-3">
-    <div class="card-header">
-      <span>{{comentario.usuario}}</span>
+  
+  {% if comentarios %}
+    <p class="font-weight-bold">Respostas</p>
+    {% for comentario in comentarios %}
+    <div class="card mb-3">
+      <div class="card-header">
+        <span>{{comentario.usuario}}</span>
+      </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p>{{comentario.comentario}}</p>
+          <footer class="blockquote-footer">{{comentario.data}}</footer>
+        </blockquote>
+      </div>
     </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>{{comentario.comentario}}</p>
-        <footer class="blockquote-footer">{{comentario.data}}</footer>
-      </blockquote>
-    </div>
-  </div>
-  {% endfor %}
+    {% endfor %}
   {% else %}
     <p>Insira um comentário</p>
   {% endif %}
