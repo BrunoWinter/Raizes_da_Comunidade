@@ -1,11 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "Raizes_da_Comunidade/setup/wsgi.py",
-      "use": "@vercel/python"
-    }
-  ],
   "routes": [
     {
       "src": "/media/(.*)",
@@ -15,13 +9,5 @@
       "src": "/(.*)",
       "dest": "Raizes_da_Comunidade/setup/wsgi.py"
     }
-  ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "setup.settings"
-  },
-  "functions": {
-    "Raizes_da_Comunidade/setup/wsgi.py": {
-      "runtime": "python3.8"
-    }
-  }
+  ]
 }
