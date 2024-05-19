@@ -17,14 +17,11 @@
     }
   ],
   "env": {
-    "DJANGO_SETTINGS_MODULE": "nome_do_seu_projeto.settings"
+    "DJANGO_SETTINGS_MODULE": "setup.settings"
   },
   "functions": {
     "Raizes_da_Comunidade/setup/wsgi.py": {
-      "runtime": "python3.12",
-      "environment": {
-        "DJANGO_SETTINGS_MODULE": "setup.settings"
-      }
+      "runtime": "python3.8"
     }
   }
 }
