@@ -1,0 +1,13 @@
+{
+    "builds": [{
+        "src": "RAIZES_DA_COMUNIDADE/setup/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "runtime": "python3.12" }
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "RAIZES_DA_COMUNIDADE/setup/wsgi.py"
+        }
+    ]
+}
