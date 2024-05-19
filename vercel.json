@@ -3,13 +3,11 @@
   "builds": [
     {
       "src": "Raizes_da_Comunidade/setup/wsgi.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": { "runtime": "python3.12" }
     }
   ],
   "routes": [
-    {
-       "src": "/(.*)",
-    },
     {
       "src": "/media/(.*)",
       "dest": "Raizes_da_Comunidade/media/$1"
@@ -17,20 +15,10 @@
     {
       "src": "/(.*)",
       "dest": "Raizes_da_Comunidade/setup/wsgi.py"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "Raizes_da_Comunidade/static/$1"
     }
   ]
-}
-
-    
-    "builds": [{
-        "src": "Raizes_da_Comunidade/setup/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "runtime": "python3.12" }
-    }],
-    "routes": [
-        {
-           
-            "dest": "Raizes_da_Comunidade/setup/wsgi.py"
-        }
-    ]
 }
