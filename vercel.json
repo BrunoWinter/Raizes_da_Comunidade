@@ -1,4 +1,4 @@
-{
+ {
   "version": 2,
   "routes": [
     {
@@ -9,11 +9,5 @@
       "src": "/(.*)",
       "dest": "Raizes_da_Comunidade/setup/wsgi.py"
     }
-  ],
-  "frameworks": {
-    "python": {
-      "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
-      "rootDirectory": "Raizes_da_Comunidade"
-    }
-  }
+  ]
 }
