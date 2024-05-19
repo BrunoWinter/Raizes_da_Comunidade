@@ -4,7 +4,7 @@
     {
       "src": "Raizes_da_Comunidade/setup/wsgi.py",
       "use": "@vercel/python",
-      "config": { "runtime": "python3.12" }
+    
     }
   ],
   "routes": [
