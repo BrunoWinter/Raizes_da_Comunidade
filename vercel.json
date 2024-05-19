@@ -15,10 +15,6 @@
     {
       "src": "/(.*)",
       "dest": "Raizes_da_Comunidade/setup/wsgi.py"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "Raizes_da_Comunidade/static/$1"
     }
   ]
 }
